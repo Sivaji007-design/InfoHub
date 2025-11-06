@@ -1,0 +1,157 @@
+/* ---- Root Variables ---- */
+:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --accent: #0ea5a4;
+  --accent-dark: #0b837f;
+  --text-dark: #0f172a;
+  --text-muted: #6b7280;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --font: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* ---- Body & Container ---- */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-dark);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 24px;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px var(--shadow);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 12px 32px var(--shadow);
+}
+
+/* ---- Header & Navigation ---- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+nav button {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 6px;
+}
+
+nav button:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+nav button.active {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+
+/* ---- Layout ---- */
+.module {
+  padding: 16px 0;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 280px;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+/* ---- Form Elements ---- */
+input,
+select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: 100%;
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ---- Buttons ---- */
+button.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button.primary:hover {
+  background: var(--accent-dark);
+}
+
+button.primary:active {
+  transform: scale(0.98);
+}
+
+/* ---- Typography ---- */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav button {
+    margin-bottom: 6px;
+  }
+}
